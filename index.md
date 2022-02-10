@@ -1,6 +1,6 @@
-## Welcome to GitHub Pages
+## Hypixel Api Library
 
-You can use the [editor on GitHub](https://github.com/koolade44/Hype-Api-Lib/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+A super simple and lightweight library that makes reading the Hypixel API super simple.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
