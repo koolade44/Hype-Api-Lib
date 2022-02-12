@@ -5,7 +5,7 @@
 ### Basic usage:
 
 ```
-APIResponse resp = new APIRequest().withEndpoint(APIEndpoint.HYPIXEL_GAMES).sendRequest(); //also includes chainable .withUUID() and .withKey() which are self explanitory
+APIResponse resp = new APIRequest().withEndpoint(APIEndpoint.HYPIXEL_GAMES).sendRequest(); //also includes chainable .withUUID(String) and .withKey(String) which are self explanitory
 System.out.println(resp.getParsedMap().get("success").toString);
 System.out.println(resp.getParsedMap().getChildMap("games").get("QUAKECRAFT").toString);
 ```
