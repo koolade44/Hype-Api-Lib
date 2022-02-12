@@ -2,6 +2,8 @@
 
 ## Getting started:
 
+Download compiled jar: [https://github.com/koolade44/Hype-Api-Lib/releases](https://github.com/koolade44/Hype-Api-Lib/releases)
+
 ### Basic usage:
 
 ```
