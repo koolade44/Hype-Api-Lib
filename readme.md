@@ -13,7 +13,7 @@ System.out.println(resp.getParsedMap().getChildMap("games").get("QUAKECRAFT").to
 ### Other useful things:
 
 ```
-APIUtils.tryParseAll
+APIUtils.tryParseAll(Object val)
 ```
 Tries to parse a value as all different types of variables and returns the first one that succeeds, or the orignal if it fails, as a custom type 'ParsedValue' with methods:
 ```
