@@ -1,8 +1,8 @@
-### HypeApi Lib
+# HypeApi Lib
 
 ## Getting started:
 
-# Basic usage:
+### Basic usage:
 
 ```
 APIResponse resp = new APIRequest().withEndpoint(APIEndpoint.HYPIXEL_GAMES).sendRequest();
@@ -10,7 +10,7 @@ System.out.println(resp.getParsedMap().get("success").toString);
 System.out.println(resp.getParsedMap().getChildMap("games").get("QUAKECRAFT").toString);
 ```
 
-# Other useful things:
+### Other useful things:
 
 ```
 APIUtils.tryParseAll
