@@ -12,6 +12,8 @@ public class Help {
         if (dt != null && dt.isSupported(Desktop.Action.BROWSE)) {
             dt.browse(new URI("https://koolade44.github.io/Hype-Api-Lib/"));
         }
+        
+        //TODO: eventually have jframe window for help here
         else {
             File f = new File("help.txt");
             if (!f.exists()) {
