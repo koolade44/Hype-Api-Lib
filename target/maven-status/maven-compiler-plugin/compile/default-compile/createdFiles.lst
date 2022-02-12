@@ -1,0 +1,12 @@
+com\koolade446\hypeapi\ApiList.class
+com\koolade446\hypeapi\ApiEndpoint.class
+com\koolade446\hypeapi\ApiMap.class
+com\koolade446\hypeapi\ApiResponse.class
+com\koolade446\hypeapi\IsNotListException.class
+com\koolade446\hypeapi\ApiRequest.class
+com\koolade446\hypeapi\Help.class
+com\koolade446\hypeapi\MissingFieldException.class
+com\koolade446\hypeapi\ApiEndpoint$1.class
+com\koolade446\hypeapi\IsNotMapException.class
+com\koolade446\hypeapi\ParsedValue.class
+com\koolade446\hypeapi\ApiUtils.class
