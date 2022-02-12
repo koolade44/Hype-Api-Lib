@@ -5,7 +5,7 @@
 ### Basic usage:
 
 ```
-APIResponse resp = new APIRequest().withEndpoint(APIEndpoint.HYPIXEL_GAMES).sendRequest();
+APIResponse resp = new APIRequest().withEndpoint(APIEndpoint.HYPIXEL_GAMES).sendRequest(); //also includes chainable .withUUID() and .withKey() which are self explanitory
 System.out.println(resp.getParsedMap().get("success").toString);
 System.out.println(resp.getParsedMap().getChildMap("games").get("QUAKECRAFT").toString);
 ```
@@ -36,5 +36,9 @@ APIList.getChildMap(int index) //returns a Map<String, Object> with the given in
 APIList.hasChildList(int index) //returns true if this list contains another list with this index
 APIList.getChildList(int index) //returns a List<Object> with the given index or throws IsNotListException
 ```
+
+
+#### Extras
+APIEndpoints.SKYBLOCK_AUCTIONS has a .withPage(int num) that allows you to get a page of th ah use it like this new APIRequest.withEndpoint(APIEndpoints.SKYBLOCK_AUCTIONS.withPage(3)).sendRequest
 
 Happy modding :)
