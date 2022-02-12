@@ -1,37 +1,44 @@
-## Hello!!!!
+# HypeApi Lib
 
-You can use the [editor on GitHub](https://github.com/koolade44/Hype-Api-Lib/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Getting started:
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Basic usage:
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```
+APIResponse resp = new APIRequest().withEndpoint(APIEndpoint.HYPIXEL_GAMES).sendRequest(); //also includes chainable .withUUID(String) and .withKey(String) which are self explanitory
+System.out.println(resp.getParsedMap().get("success").toString);
+System.out.println(resp.getParsedMap().getChildMap("games").get("QUAKECRAFT").toString);
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+### Other useful things:
 
-### Jekyll Themes
+```
+APIUtils.tryParseAll(String val)
+```
+Tries to parse a value as all different types of variables and returns the first one that succeeds, or the orignal if it fails, as a custom type 'ParsedValue' with methods:
+```
+ParsedValue.getType() //returns the type of the parsed value i.e. "java.lang.Boolean" for casting purposes
+ParsedValue.getValue() //returns the value i.e. 'true'
+ParsedValue.isParseSuccessful() //returns true if the value was succefully parsed to a value
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/koolade44/Hype-Api-Lib/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+APIList and APIMap are custom types that extend list and map respectivley but have a few helpful methods
+```
+APIMap.hasChildMap(String name) //returns true if this map contains another map with this name as a key
+APIMap.getChildMap(String name) //returns a Map<String, Object> with the given name or throws IsNotMapException
+APIMap.hasChildList(String name) //returns true if this map contains a list with this name as a key
+APIMap.getChildList(String name) //returns a List<Object> with the given name or throws IsNotListException
+```
 
-### Support or Contact
+```
+APIList.hasChildMap(int index) //returns true if this list contains a map at this index
+APIList.getChildMap(int index) //returns a Map<String, Object> with the given index or throws IsNotMapException
+APIList.hasChildList(int index) //returns true if this list contains another list with this index
+APIList.getChildList(int index) //returns a List<Object> with the given index or throws IsNotListException
+```
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+
+#### Extras
+APIEndpoints.SKYBLOCK_AUCTIONS has a .withPage(int num) that allows you to get a page of the ah use it like this new APIRequest.withEndpoint(APIEndpoints.SKYBLOCK_AUCTIONS.withPage(3)).sendRequest
+
+Happy modding :)
