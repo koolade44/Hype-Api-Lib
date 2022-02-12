@@ -17,7 +17,7 @@ APIUtils.tryParseAll(Object val)
 ```
 Tries to parse a value as all different types of variables and returns the first one that succeeds, or the orignal if it fails, as a custom type 'ParsedValue' with methods:
 ```
-ParsedValue.getType() //returns the type of the parsed vale i.e. "java.lang.Boolean" for casting purposes
+ParsedValue.getType() //returns the type of the parsed value i.e. "java.lang.Boolean" for casting purposes
 ParsedValue.getValue() //returns the value i.e. 'true'
 ParsedValue.isParseSuccessful() //returns true if the value was succefully parsed to a value
 ```
