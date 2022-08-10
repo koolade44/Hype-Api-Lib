@@ -25,23 +25,23 @@ public class ApiList implements List {
         else throw new IsNotListException("That is not a child array");
     }
 
-    public Map<String, Object> getChildMap(int index) throws IsNotMapException {
-        if (list.get(index) instanceof Map) return (Map<String, Object>) list.get(index);
+    public ApiMap getChildMap(int index) throws IsNotMapException {
+        if (list.get(index) instanceof Map) return new ApiMap((Map<String, Object>) list.get(index));
         else throw new IsNotMapException("That is not a child map");
     }
 
-    public Map<String, Object> searchForMapByKey(String key) {
+    public ApiMap searchForMapByKey(String key) {
         for (Object o : list) {
             if (o instanceof Map) {
                 for (String k : ((Map<String, Object>) o).keySet()) {
-                    if (k.equalsIgnoreCase(key)) return (Map<String, Object>) o;
+                    if (k.equalsIgnoreCase(key)) return new ApiMap((Map<String, Object>) o);
                 }
             }
         }
         return null;
     }
 
-    public Map<String, Object> searchForMapByValue(Object value) {
+    public ApiMap searchForMapByValue(Object value) {
         for (Object o : list) {
             if (o instanceof Map) {
                 for (Object val : ((Map<String, Object>) o).values()) {
@@ -49,7 +49,7 @@ public class ApiList implements List {
                         val = ((String) val).toLowerCase();
                         value = ((String) value).toLowerCase();
                     }
-                    if (val.equals(value)) return (Map<String, Object>) o;
+                    if (val.equals(value)) return new ApiMap((Map<String, Object>) o);
                 }
             }
         }
