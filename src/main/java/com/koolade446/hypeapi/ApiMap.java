@@ -27,8 +27,8 @@ public class ApiMap implements Map<String, Object> {
         else throw new IsNotListException("That is not a child list");
     }
 
-    public Map<String, Object> getChildMap(String key) throws IsNotMapException {
-        if (map.get(key) instanceof Map) return (Map<String, Object>) map.get(key);
+    public ApiMap getChildMap(String key) throws IsNotMapException {
+        if (map.get(key) instanceof Map) return new ApiMap((Map<String, Object>) map.get(key));
         else throw new IsNotMapException("That is not a child map");
     }
 
