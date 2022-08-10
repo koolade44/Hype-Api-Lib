@@ -39,6 +39,9 @@ APIList.getChildList(int index) //returns a List<Object> with the given index or
 
 
 #### Extras
-APIEndpoints.SKYBLOCK_AUCTIONS has a .withPage(int num) that allows you to get a page of the ah use it like this new APIRequest.withEndpoint(APIEndpoints.SKYBLOCK_AUCTIONS.withPage(3)).sendRequest
+APIEndpoints.SKYBLOCK_AUCTIONS has a .withPage(int num) that allows you to get a page of the ah, use it like this:
+```
+new APIRequest.withEndpoint(APIEndpoints.SKYBLOCK_AUCTIONS.withPage(3)).sendRequest
+```
 
 Happy modding :)
